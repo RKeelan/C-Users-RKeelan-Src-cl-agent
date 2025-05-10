@@ -23,6 +23,38 @@ You can also use:
 ```bash
 python -m cla --help
 ```
+
+### Managing API Keys
+
+The `cla keys` subcommand allows you to securely store and manage API keys:
+
+```bash
+# Set a key (will prompt for value)
+cla keys set openai
+
+# Set a key with a value directly
+cla keys set openai --value sk-your-key-here
+
+# Retrieve a stored key
+cla keys get openai
+
+# Use a key in another command
+export OPENAI_API_KEY="$(cla keys get openai)"
+
+# List all stored keys (without showing values)
+cla keys list
+
+# Show the path to the keys.json file
+cla keys path
+```
+
+Keys are stored in a JSON file with secure permissions (readable only by the current user). The file location varies by platform:
+- Linux: `~/.config/cl-agent/keys.json`
+- macOS: `~/Library/Application Support/cl-agent/keys.json`
+- Windows: `%APPDATA%\cl-agent\keys.json`
+
+You can customize the storage location by setting the `CLA_USER_PATH` environment variable.
+
 ## Development
 
 To contribute to this tool, first checkout the code. Then create a new virtual environment:
