@@ -1,0 +1,28 @@
+[project]
+name = "cl-agent"
+version = "0.1"
+description = "A CLI agent that uses MCP"
+readme = "README.md"
+authors = [{name = "R. Keelan"}]
+license = "Apache-2.0"
+requires-python = ">=3.10"
+classifiers = []
+dependencies = [
+    "click"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/RKeelan/cl-agent"
+Changelog = "https://github.com/RKeelan/cl-agent/releases"
+Issues = "https://github.com/RKeelan/cl-agent/issues"
+CI = "https://github.com/RKeelan/cl-agent/actions"
+
+[project.scripts]
+cla = "cl_agent.cli:cli"
+
+[project.optional-dependencies]
+test = ["pytest"]
