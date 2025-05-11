@@ -24,6 +24,27 @@ You can also use:
 python -m cla --help
 ```
 
+### Running the Agent
+
+The agent accepts input in multiple ways:
+- As a command-line argument
+- From stdin (via pipe or redirect)
+- From a text editor if no input is provided
+
+```bash
+# Or just use the default command
+cla "Hello, agent!"
+
+# Pipe input to the command
+echo "Hello, agent!" | cla run
+
+# Both
+cat mono_file.c | cla "What is this?"
+
+# If no prompt is provided, and editor will be launched
+cla
+```
+
 ### Managing API Keys
 
 The `cla keys` subcommand allows you to securely store and manage API keys:
